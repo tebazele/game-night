@@ -6,6 +6,7 @@ class PlayerServices {
         console.log(`increase ${name} score by one`);
         let player = appState.players.find(p => p.name == name);
         player.score++
+        
 
     }
 
@@ -14,6 +15,16 @@ class PlayerServices {
         console.log(newPlayer)
 
         appState.players.push(newPlayer)
+
+    }
+
+    // reset players array from array in local storage
+    resetPlayersArray(storedPlayersParam) {
+        if (!storedPlayersParam) {
+            appState.players = appState.players;
+        } else {
+            appState.players = JSON.parse(storedPlayersParam);
+        }
 
     }
 

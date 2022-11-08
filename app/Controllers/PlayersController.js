@@ -30,6 +30,7 @@ export class PlayersController {
     increaseScore(name) {
         playerServices.increaseScore(name);
         this.drawCharacters()
+        this.savePlayers()
     }
 
     createPlayer() {
@@ -57,7 +58,7 @@ export class PlayersController {
 
     loadPlayers() {
         let storedPlayers = window.localStorage.getItem('players');
-        appState.players = JSON.parse(storedPlayers);
+        playerServices.resetPlayersArray(storedPlayers);
         this.drawCharacters()
 
     }

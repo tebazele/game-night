@@ -7,10 +7,8 @@ import { loadState } from "./Utils/Store.js"
 
 class AppState extends EventEmitter {
 
-  players = [
-    new Player('Mom', 10),
-    new Player('Jeanne', 5)
-  ]
+  players = []
+
 
 
 
